@@ -1,0 +1,21 @@
+package com.ty.idfcmock.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ty.idfcmock.dao.PatientDao;
+import com.ty.idfcmock.dto.PatientDto;
+
+@RestController
+public class PatientController {
+	@Autowired
+   PatientDao dao;
+	
+	
+	@RequestMapping("/insertAll")
+	public void insert(@RequestBody PatientDto dto) {
+		dao.insert(dto);
+	}
+}

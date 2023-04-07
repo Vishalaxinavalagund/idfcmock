@@ -1,0 +1,30 @@
+package com.ty.idfcmock.dao;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.web.bind.annotation.PostMapping;
+
+import com.ty.idfcmock.dto.PatientDto;
+import com.ty.idfcmock.repository.UserRespository;
+
+@Component
+public class PatientDao {
+	@Autowired
+	UserRespository respository;
+	
+	@PostMapping("/insertAll")
+public void insert(PatientDto dto) {
+	respository.save(dto);
+}
+	public String delete(PatientDto dto) {
+		respository.delete(dto);
+		return "data deleted";
+	}
+	
+	public PatientDto fetch(PatientDto dto) {
+	Optional<PatientDto> dto2=respository.findById(dto.getEmail());
+		return dto;
+	}
+}

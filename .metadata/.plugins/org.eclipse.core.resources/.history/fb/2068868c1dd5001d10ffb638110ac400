@@ -1,0 +1,28 @@
+package com.ty.idfcmock.controller;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.ty.idfcmock.dao.PatientDao;
+import com.ty.idfcmock.dto.PatientDto;
+
+@RestController
+public class PatientController {
+	@Autowired
+   PatientDao dao;
+	
+	
+	@PostMapping("/insertAll")
+	public void insert(@RequestBody PatientDto dto) {
+		dao.insert(dto);
+	}
+	
+	@GetMapping("/deleteAll")
+	public String delete(@RequestBody PatientDto dto) {
+		String str=dao.delete(dto);
+		return str;
+	}
+}

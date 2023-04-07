@@ -1,0 +1,5 @@
+package com.ty.idfcmock.repository;
+
+public interface UserRespository {
+
+}

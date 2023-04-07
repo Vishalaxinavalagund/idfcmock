@@ -1,0 +1,37 @@
+package com.ty.idfcmock.dto;
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+@Entity
+public class StudentDto {
+	@Id
+	private String Stud_email;
+	private String Stud_name;
+	private int Stud_id;
+	private long Stud_phno;
+	public String getStud_email() {
+		return Stud_email;
+	}
+	public void setStud_email(String stud_email) {
+		Stud_email = stud_email;
+	}
+	public String getStud_name() {
+		return Stud_name;
+	}
+	public void setStud_name(String stud_name) {
+		Stud_name = stud_name;
+	}
+	public int getStud_id() {
+		return Stud_id;
+	}
+	public void setStud_id(int stud_id) {
+		Stud_id = stud_id;
+	}
+	public long getStud_phno() {
+		return Stud_phno;
+	}
+	public void setStud_phno(long stud_phno) {
+		Stud_phno = stud_phno;
+	}
+	
+}

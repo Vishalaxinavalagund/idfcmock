@@ -1,0 +1,5 @@
+package com.ty.idfcmock.dto;
+
+public class PatientDto {
+
+}
